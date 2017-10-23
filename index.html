@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>json</title>
+</head>
+<body>
+<h2>links</h2>
+<ol id="links"></ol>
+
+<script>
+	var info = {
+    "Full_Name": "Abubakr",
+    "title" : "coder",
+    "Social_links":[
+    {
+   "facebook" : "https://www.facebook.com/bakr.mahmoud.927",
+   "linkedin": "https://www.linkedin.com/in/abubakr-mahmoud-074956106/",
+   "twitter": "https://twitter.com/abubakr28355335"
+
+      }
+      ]
+	},
+	output = '',
+	i;
+	   for(  i = 0 ; i<= info.Social_links.length; i++){
+		for(key in info.Social_links[i]){
+			if (info.Social_links.hasOwnProperty(key)){
+			 output += '<li>' +
+			 '<a href="' + info.Social_links[key] + '">' + key + '</a>' +
+			 '</li>';
+              } //hasOwnProperty Cheack
+			}//if the links has the key property
+		}//for...go through each link
+var update = document.getElementById('links');
+update.innerHTML = output;
+
+</script>
+
+</body>
+</html>
